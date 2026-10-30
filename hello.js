@@ -6,7 +6,7 @@ function printAll(x) {
 }
 
 rl.question("Values: ", (line) => {
-  arr_name = line.split(" ");
+  const arr_name = line.trim().split(/\s+/);
   printAll(arr_name);
   rl.close();
 });
