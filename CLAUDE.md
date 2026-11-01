@@ -1,14 +1,14 @@
 # Triage
 
-A small issue board for a team. Right now it is hello.js, which reads values typed
-in one line and prints each on its own line.
+small issue board for our team. rn its just hello.js: type values in 1 line --> prints each one on its own line.
 
 ## Run it
 node hello.js
 
 ## Rules
-- Ask before deleting or renaming any file.
-- Never put keys, passwords, or .env contents in code or in this chat.
-- Make one small change at a time and show me the diff.
-- Do not add a dependency without saying why.
-- Commit messages say the outcome, not the activity.
+- dont delete or rename any file without asking me first, no exceptions.
+- no keys, passwords or .env stuff in code or chat. ever.
+- 1 small change at a time, show me the diff b4 u move on.
+- wanna add a package/dependency? tell me why first, then wait for my ok.
+- explain changes short n simple, step by step, no long theory.
+- commit msgs say what got done (the outcome), not what u were doing.
