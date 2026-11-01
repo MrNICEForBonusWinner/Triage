@@ -6,3 +6,5 @@ const issues = [
 ];
 
 for (const issue of issues) console.log(issue.title);
+
+console.log(`Done: ${issues.filter((i) => i.status === "done").length} of ${issues.length}`);
