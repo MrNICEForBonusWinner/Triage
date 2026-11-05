@@ -1,6 +1,6 @@
 import sqlite3
 from typing import Optional
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Response
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field, ConfigDict
@@ -62,3 +62,11 @@ def set_status(issue_id: int, body: StatusUpdate):
         raise HTTPException(404, "no such issue")
     q("UPDATE issues SET status = ? WHERE id = ?", (body.status, issue_id))
     return q("SELECT * FROM issues WHERE id = ?", (issue_id,))[1][0]
+
+
+@app.delete("/api/issues/{issue_id}", status_code=204)
+def delete_issue(issue_id: int):
+    if not q("SELECT id FROM issues WHERE id = ?", (issue_id,))[1]:
+        raise HTTPException(404, "no such issue")
+    q("DELETE FROM issues WHERE id = ?", (issue_id,))
+    return Response(status_code=204)
